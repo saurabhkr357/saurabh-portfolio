@@ -1,0 +1,70 @@
+<section
+  #experienceSection
+  class="experience-section"
+  id="experience"
+>
+  <div class="section-heading">
+    <p class="eyebrow">THE JOURNEY</p>
+
+    <h2>
+      Experience that
+      <span class="gradient-text">builds up.</span>
+    </h2>
+
+    <p class="section-description">
+      Building enterprise applications, solving production challenges
+      and managing the complete application lifecycle.
+    </p>
+  </div>
+
+  <div #experienceViewport class="experience-viewport">
+    <div #experienceTrack class="timeline">
+      @for (item of experiences; track item.company) {
+        <article class="timeline-item">
+          <div class="timeline-marker">
+            <span></span>
+          </div>
+
+          <div class="experience-card">
+            <div class="experience-card-header">
+              <span class="period">{{ item.period }}</span>
+              <span class="location">{{ item.location }}</span>
+            </div>
+
+            <h3>{{ item.role }}</h3>
+
+            <p class="company">{{ item.company }}</p>
+
+            <div class="project-info">
+              <div>
+                <span class="info-label">CLIENT</span>
+                <strong>{{ item.client }}</strong>
+              </div>
+
+              <div>
+                <span class="info-label">PROJECT</span>
+                <strong>{{ item.project }}</strong>
+              </div>
+            </div>
+
+            <p class="description">{{ item.description }}</p>
+
+            <h4 class="achievement-heading">Key contributions</h4>
+
+            <ul class="achievements">
+              @for (achievement of item.achievements; track achievement) {
+                <li>{{ achievement }}</li>
+              }
+            </ul>
+
+            <div class="technology-list">
+              @for (tech of item.technologies; track tech) {
+                <span class="tech-pill">{{ tech }}</span>
+              }
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

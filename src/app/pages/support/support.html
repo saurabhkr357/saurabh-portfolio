@@ -1,0 +1,218 @@
+<main class="support-page">
+  <section class="support-shell">
+
+    <!-- LEFT: TIP MENU -->
+    <div class="menu-panel">
+      <div class="panel-label">MENU / SUPPORT</div>
+
+      <div class="menu-header">
+        <p class="eyebrow">A LITTLE APPRECIATION</p>
+        <h1>Fuel my next <span>build.</span></h1>
+        <p class="intro">
+          If you enjoy my work, you can support my next project.
+          Every contribution is appreciated.
+        </p>
+      </div>
+
+      <div class="tip-menu">
+        @for (tip of tips; track tip.amount) {
+          <button
+            type="button"
+            class="tip-option"
+            [class.selected]="!isCustom && selectedAmount === tip.amount"
+            (click)="selectTip(tip)"
+          >
+            <span class="tip-copy">
+              <strong>{{ tip.title }}</strong>
+              <small>{{ tip.description }}</small>
+            </span>
+
+            <span class="tip-price">₹{{ tip.amount }}</span>
+          </button>
+        }
+
+        <button
+          type="button"
+          class="tip-option"
+          [class.selected]="isCustom"
+          (click)="selectCustomAmount()"
+        >
+          <span class="tip-copy">
+            <strong>Custom pour</strong>
+            <small>Pick your own amount.</small>
+          </span>
+
+          <span class="tip-price">₹ ?</span>
+        </button>
+      </div>
+
+      @if (isCustom) {
+        <div class="custom-amount">
+          <label for="customAmount">Choose your amount (₹)</label>
+
+          <input
+            id="customAmount"
+            type="number"
+            min="1"
+            max="100000"
+            step="1"
+            [(ngModel)]="customAmount"
+            (ngModelChange)="onCustomAmountChange($event)"
+            placeholder="Enter amount"
+          />
+
+          @if (!validAmount) {
+            <p class="validation-error">
+              Enter an amount between ₹1 and ₹1,00,000.
+            </p>
+          }
+        </div>
+      }
+
+      <div class="note-field">
+        <label for="paymentNote">Add a note (optional)</label>
+
+        <input
+          id="paymentNote"
+          type="text"
+          maxlength="80"
+          [(ngModel)]="paymentNote"
+          (ngModelChange)="onNoteChange()"
+          placeholder="A message with your payment"
+        />
+      </div>
+
+      <div class="menu-footer">
+        <span class="status-dot"></span>
+        <span>Direct UPI · No checkout account required</span>
+      </div>
+    </div>
+
+    <!-- RIGHT: RECEIPT -->
+    <aside class="receipt-panel">
+      <header class="receipt-header">
+        <p class="receipt-brand">SAURABH'S COFFEE BAR</p>
+        <p class="receipt-subtitle">Brewed with code · Paid with UPI</p>
+      </header>
+
+      <div class="receipt-divider"></div>
+
+      <div class="receipt-line">
+        <span>{{ isCustom ? 'Custom tip' : selectedTipTitle }} × 1</span>
+        <strong>{{ formattedAmount }}</strong>
+      </div>
+
+      <div class="receipt-line receipt-muted">
+        <span>Tax</span>
+        <span>₹0 (good vibes only)</span>
+      </div>
+
+      <div class="receipt-divider"></div>
+
+      <div class="receipt-total">
+        <strong>TOTAL</strong>
+        <strong>{{ formattedAmount }}</strong>
+      </div>
+
+      <div class="qr-area">
+        @if (qrCodeDataUrl && validAmount) {
+          <div class="qr-frame">
+            <img
+              [src]="qrCodeDataUrl"
+              alt="UPI payment QR code"
+              width="220"
+              height="220"
+            />
+          </div>
+
+          <p class="scan-label">
+            Scan &amp; pay {{ formattedAmount }}
+          </p>
+        } @else {
+          <div class="qr-placeholder">
+            @if (isGeneratingQr) {
+              Generating QR code…
+            } @else {
+              Enter a valid amount to generate your QR code.
+            }
+          </div>
+        }
+
+        <p class="upi-apps">
+          GPay · PhonePe · Paytm · other compatible UPI apps
+        </p>
+      </div>
+
+      <div class="upi-details">
+        <div class="upi-row">
+          <div class="upi-copy">
+            <span class="upi-label">YOUR UPI ID</span>
+            <code>{{ upiId }}</code>
+          </div>
+
+          <button type="button" class="copy-button" (click)="copyUpiId()">
+            Copy
+          </button>
+        </div>
+
+        <div class="upi-row">
+          <div class="upi-copy">
+            <span class="upi-label">PAYMENT AMOUNT</span>
+            <code>{{ formattedAmount }}</code>
+          </div>
+
+          <button
+            type="button"
+            class="copy-button"
+            [disabled]="!validAmount"
+            (click)="copyPaymentLink()"
+          >
+            Copy link
+          </button>
+        </div>
+      </div>
+
+      <div class="payment-actions">
+        <button
+          type="button"
+          class="pay-button"
+          [disabled]="!validAmount"
+          (click)="payWithUpi()"
+        >
+          <span>Continue to UPI</span>
+          <span aria-hidden="true">↗</span>
+        </button>
+
+        <button
+          type="button"
+          class="paid-button"
+          (click)="showThankYou()"
+        >
+          ♡ I've paid
+        </button>
+      </div>
+
+      @if (statusMessage) {
+        <p class="status-message" aria-live="polite">
+          {{ statusMessage }}
+        </p>
+      }
+
+      @if (thankYouVisible) {
+        <div class="thank-you">
+          <strong>Thank you for the support!</strong>
+          <p>
+            This website cannot verify your transaction. Please check your
+            UPI app for payment status.
+          </p>
+        </div>
+      }
+
+      <p class="receipt-disclaimer">
+        Payment is made directly through your UPI app.
+        This website does not collect or verify payments.
+      </p>
+    </aside>
+
+  </section>
+</main>

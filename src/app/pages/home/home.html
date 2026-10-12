@@ -1,0 +1,114 @@
+<main>
+  <section class="hero section-shell" id="home">
+    <div class="hero-copy">
+      <div class="availability">
+        <span class="status-dot"></span>
+        FULL-STACK DEVELOPER
+      </div>
+
+      <p class="eyebrow">HELLO, I'M SAURABH</p>
+
+      <h1>
+        Building digital
+        <span class="muted-line">experiences</span>
+        that <span class="gradient-text">matter.</span>
+      </h1>
+
+      <p class="hero-description">
+        I build modern web applications with Angular, ASP.NET Core
+        and SQL Server — turning complex business requirements
+        into reliable, user-friendly software.
+      </p>
+
+      <div class="hero-actions">
+        <a class="button button-primary" href="#projects">
+          Explore my work <span>↗</span>
+        </a>
+
+        <a class="button button-secondary" href="#contact">
+          Let's connect
+        </a>
+      </div>
+
+      <div class="tech-strip">
+        <span class="tech-label">MY TOOLKIT</span>
+
+        @for (tech of technologies; track tech) {
+        <span class="tech-pill">
+          {{ tech }}</span>
+        }
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="visual-glow"></div>
+
+      <div class="portrait-card">
+        <div class="portrait-top">
+          <span>DEVELOPER PROFILE</span>
+          <span class="portrait-indicator">● AVAILABLE</span>
+        </div>
+
+        <div class="portrait-placeholder">
+          <img src="/assests/ProfessionalDP.png" alt="Saurabh Kumar - Full-Stack .NET Developer" class="profile-photo" />
+        </div>
+
+        <div class="portrait-bottom">
+          <div>
+            <strong>Saurabh Kumar</strong>
+            <span>Full-Stack .NET Developer</span>
+          </div>
+          <span class="arrow-badge">↗</span>
+        </div>
+      </div>
+
+      <div class="floating-card floating-top">
+        <span class="floating-icon">✳</span>
+        <div>
+          <strong>Clean code</strong>
+          <span>Built to scale</span>
+        </div>
+      </div>
+
+      <div class="floating-card floating-bottom">
+        <span class="code-symbol">&lt;/&gt;</span>
+        <div>
+          <strong>Full-stack</strong>
+          <span>Frontend + Backend</span>
+        </div>
+      </div>
+    </div>
+
+    <a class="scroll-cue" href="#about">
+      <span class="scroll-line"></span>
+      SCROLL TO EXPLORE
+    </a>
+  </section>
+
+  <section class="intro-section" id="about">
+    <p class="eyebrow">A LITTLE ABOUT ME</p>
+    <h2>
+      Engineering reliable software,
+      <span class="gradient-text">one problem at a time.</span>
+    </h2>
+    <p>
+      I work across frontend interfaces, backend APIs and relational
+      databases, with a focus on maintainability, performance and
+      practical solutions to real business problems.
+    </p>
+  </section>
+
+  <app-experience></app-experience>
+
+  <app-skills></app-skills>
+
+  <app-projects></app-projects>
+
+  <section class="contact-section" id="contact">
+    <p class="eyebrow">HAVE A PROJECT IN MIND?</p>
+    <h2>Let's build something <span class="gradient-text">great.</span></h2>
+    <a class="button button-primary" href="mailto:YOUR_EMAIL@example.com">
+      Get in touch <span>↗</span>
+    </a>
+  </section>
+</main>

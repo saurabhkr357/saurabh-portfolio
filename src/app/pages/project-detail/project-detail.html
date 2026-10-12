@@ -1,0 +1,70 @@
+
+<main class="detail-page">
+  <a class="back-link" routerLink="/" fragment="projects">
+    ← Back to projects
+  </a>
+
+  <header class="detail-header">
+    <p class="eyebrow">PROJECT / CASE STUDY</p>
+    <h1>{{ project.title }}</h1>
+    <p class="subtitle">{{ project.subtitle }}</p>
+
+    <a
+      class="button"
+      [href]="project.github"
+      target="_blank"
+      rel="noopener noreferrer">
+      View source code ↗
+    </a>
+  </header>
+
+  <section class="detail-section">
+    <p class="eyebrow">OVERVIEW</p>
+    <h2>What I wanted to build</h2>
+    <p>{{ project.overview }}</p>
+  </section>
+
+  <section class="detail-section">
+    <p class="eyebrow">TECH STACK</p>
+    <h2>Built with</h2>
+
+    <div class="stack-grid">
+      <article>
+        <span>FRONTEND</span>
+        <h3>{{ project.frontend }}</h3>
+      </article>
+
+      <article>
+        <span>BACKEND</span>
+        <h3>{{ project.backend }}</h3>
+      </article>
+
+      <article>
+        <span>DATABASE</span>
+        <h3>{{ project.database }}</h3>
+      </article>
+    </div>
+  </section>
+
+  <section class="detail-section">
+    <p class="eyebrow">KEY FEATURES</p>
+    <h2>What it includes</h2>
+
+    <ul class="feature-list">
+      @for (feature of project.features; track feature) {
+        <li>{{ feature }}</li>
+      }
+    </ul>
+  </section>
+
+  <section class="detail-cta">
+    <h2>Want to explore the implementation?</h2>
+    <a
+      class="button"
+      [href]="project.github"
+      target="_blank"
+      rel="noopener noreferrer">
+      Explore GitHub ↗
+    </a>
+  </section>
+</main>

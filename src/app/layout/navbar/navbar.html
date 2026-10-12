@@ -1,0 +1,19 @@
+<header class="navbar">
+  <a class="brand" href="#home" (click)="closeMenu()">
+    <span class="brand-mark">S</span>
+    <span>SAURABH<span class="brand-dot">.</span></span>
+  </a>
+
+  <button class="menu-toggle" type="button" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen" aria-label="Toggle navigation">
+    {{ menuOpen ? 'CLOSE' : 'MENU' }}
+  </button>
+
+  <nav class="nav-links" [class.open]="menuOpen">
+    <a href="#about" (click)="closeMenu()">About</a>
+    <a href="#experience" (click)="closeMenu()">Experience</a>
+    <a href="#skills" (click)="closeMenu()">Skills</a>
+    <a href="#projects" (click)="closeMenu()">Projects</a>
+    <a href="#contact" class="contact-link" (click)="closeMenu()">Let's Talk <span>↗</span></a>
+    <a routerLink="/support" routerLinkActive="active">Support</a>
+  </nav>
+</header>

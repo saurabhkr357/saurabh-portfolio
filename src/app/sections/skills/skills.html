@@ -1,0 +1,30 @@
+
+<section class="skills-section" id="skills" appReveal>
+  <div class="section-heading">
+    <p class="eyebrow">MY TOOLKIT</p>
+    <h2>Technologies I use to <span class="gradient-text">build.</span></h2>
+    <p class="section-description">
+      A practical stack for developing, testing and maintaining
+      full-stack applications.
+    </p>
+  </div>
+
+  <div class="skills-grid">
+    @for (category of categories; track category.number) {
+      <article class="skill-card">
+        <div class="card-top">
+          <span class="card-number">{{ category.number }}</span>
+          <span class="card-symbol">✳</span>
+        </div>
+
+        <h3>{{ category.title }}</h3>
+
+        <div class="skill-list">
+          @for (skill of category.skills; track skill) {
+            <span class="skill-chip">{{ skill }}</span>
+          }
+        </div>
+      </article>
+    }
+  </div>
+</section>
