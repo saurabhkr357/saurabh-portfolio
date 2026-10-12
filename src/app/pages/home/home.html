@@ -21,6 +21,11 @@
       </p>
 
       <div class="hero-actions">
+        <a href="/assests/Saurabh_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <span>View Resume</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+
         <a class="button button-primary" href="#projects">
           Explore my work <span>↗</span>
         </a>
@@ -58,12 +63,14 @@
             <strong>Saurabh Kumar</strong>
             <span>Full-Stack .NET Developer</span>
           </div>
+
           <span class="arrow-badge">↗</span>
         </div>
       </div>
 
       <div class="floating-card floating-top">
         <span class="floating-icon">✳</span>
+
         <div>
           <strong>Clean code</strong>
           <span>Built to scale</span>
@@ -72,9 +79,46 @@
 
       <div class="floating-card floating-bottom">
         <span class="code-symbol">&lt;/&gt;</span>
+
         <div>
           <strong>Full-stack</strong>
-          <span>Frontend + Backend</span>
+          <span>Microservice and Monolithic</span>
+        </div>
+      </div>
+
+      <div class="floating-card floating-angular">
+        <span class="floating-icon">A</span>
+
+        <div>
+          <strong>Angular</strong>
+          <span>Dynamic UI</span>
+        </div>
+      </div>
+
+      <div class="floating-card floating-dotnet">
+        <span class="floating-icon">C#</span>
+
+        <div>
+          <strong>.NET Core</strong>
+          <span>Powerful APIs</span>
+        </div>
+      </div>
+
+      <div class="floating-card floating-sql">
+        <span class="floating-icon">▤</span>
+
+        <div>
+          <strong>SQL Server</strong>
+          <span>Data &amp; queries</span>
+        </div>
+      </div>
+
+      <div class="floating-card floating-deploy">
+        <span class="floating-icon">↗</span>
+
+        <div>
+          <strong>Deployment</strong>
+          <span>Linux · Nginx · Azure</span>
         </div>
       </div>
     </div>
@@ -85,18 +129,22 @@
     </a>
   </section>
 
+  <!-- ABOUT SECTION -->
   <section class="intro-section" id="about">
     <p class="eyebrow">A LITTLE ABOUT ME</p>
+
     <h2>
       Engineering reliable software,
       <span class="gradient-text">one problem at a time.</span>
     </h2>
+
     <p>
       I work across frontend interfaces, backend APIs and relational
       databases, with a focus on maintainability, performance and
       practical solutions to real business problems.
     </p>
   </section>
+
 
   <app-experience></app-experience>
 
@@ -105,10 +153,126 @@
   <app-projects></app-projects>
 
   <section class="contact-section" id="contact">
-    <p class="eyebrow">HAVE A PROJECT IN MIND?</p>
-    <h2>Let's build something <span class="gradient-text">great.</span></h2>
-    <a class="button button-primary" href="mailto:YOUR_EMAIL@example.com">
-      Get in touch <span>↗</span>
-    </a>
+    <div class="contact-header">
+      <p class="eyebrow">LET'S CONNECT</p>
+
+      <h2>
+        Have an idea?
+        <span class="gradient-text">Let's build it.</span>
+      </h2>
+
+      <p class="contact-description">
+        Have a project, an opportunity, or just want to talk technology?
+        Send me a message and let's start a conversation.
+      </p>
+    </div>
+
+    <div class="contact-layout">
+      <!-- CONTACT FORM -->
+      <div class="contact-form-card">
+        <h3>Send me a message</h3>
+        <p class="contact-card-description">
+          Fill in the details below and I'll be happy to connect.
+        </p>
+
+        <form class="contact-form" (submit)="sendMessage($event, name.value, email.value, subject.value, message.value)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contact-name">Your name</label>
+              <input #name id="contact-name" type="text" placeholder="John Doe" autocomplete="name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="contact-email">Your email</label>
+              <input #email id="contact-email" type="email" placeholder="john@example.com" autocomplete="email" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-subject">Subject</label>
+            <input #subject id="contact-subject" type="text" placeholder="Project inquiry / Job opportunity" required />
+          </div>
+
+          <div class="form-group">
+            <label for="contact-message">Your message</label>
+            <textarea #message id="contact-message" rows="5" placeholder="Tell me a little about what you have in mind..." required></textarea>
+          </div>
+
+          <button type="submit" class="contact-submit">
+            Send message
+            <span aria-hidden="true">↗</span>
+          </button>
+
+          <p class="form-note">
+            Your default email application will open with your message prepared.
+          </p>
+        </form>
+      </div>
+
+      <div class="contact-details">
+        <div class="contact-info-heading">
+          <span class="contact-mini-label">OTHER WAYS TO REACH ME</span>
+          <h3>Let's talk directly.</h3>
+        </div>
+
+        <button type="button" class="contact-method phone-copy-button" (click)="copyPhoneNumber()">
+          <span class="contact-method-icon phone-icon">☎</span>
+
+          <span class="contact-method-text">
+            <strong>Phone</strong>
+            <span>
+              {{ phoneCopied ? 'Phone number copied!' : '7489530796 · Click to copy' }}</span>
+          </span>
+
+          <span class="contact-method-arrow">
+            {{ phoneCopied ? '✓' : '⧉' }}
+          </span>
+        </button>
+
+
+        <a class="contact-method" href="https://www.linkedin.com/in/saurabh-kumar-468384195/" target="_blank" rel="noopener noreferrer">
+          <span class="contact-method-icon linkedin-icon">in</span>
+
+          <span class="contact-method-text">
+            <strong>LinkedIn</strong>
+            <span>Connect professionally</span>
+          </span>
+
+          <span class="contact-method-arrow">↗</span>
+        </a>
+
+        <a class="contact-method" href="mailto:saurabhkr357@gmail.com">
+          <span class="contact-method-icon email-icon">✉</span>
+
+          <span class="contact-method-text">
+            <strong>Email</strong>
+            <span>Drop me an email</span>
+          </span>
+
+          <span class="contact-method-arrow">↗</span>
+        </a>
+
+        <a class="contact-method" href="https://wa.me/7489530796" target="_blank" rel="noopener noreferrer">
+          <span class="contact-method-icon whatsapp-icon">W</span>
+
+          <span class="contact-method-text">
+            <strong>WhatsApp</strong>
+            <span>Let's chat directly</span>
+          </span>
+
+          <span class="contact-method-arrow">↗</span>
+        </a>
+
+        <div class="contact-availability">
+          <span class="status-dot"></span>
+          Open to meaningful opportunities
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-footer">
+      <span>SAURABH KUMAR</span>
+      <span>Built with Angular &amp; a passion for clean code.</span>
+    </div>
   </section>
 </main>

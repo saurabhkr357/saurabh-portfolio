@@ -219,6 +219,522 @@
   font-size: 8px;
 }
 
+.phone-copy-button {
+  width: 100%;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.phone-copy-button:hover {
+  transform: translateY(-3px);
+  border-color: rgba(180, 163, 255, 0.4);
+}
+
+.phone-icon {
+  font-size: 21px;
+}
+
+.phone-copy-button:focus-visible {
+  outline: 2px solid #c4b5fd;
+  outline-offset: 4px;
+}
+
+
+.contact-section {
+  padding: 100px clamp(24px, 9vw, 130px) 35px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  background:
+    radial-gradient(
+      ellipse at 15% 10%,
+      rgba(139, 92, 246, 0.09),
+      transparent 45%
+    ),
+    #0b0a12;
+}
+
+.contact-header {
+  max-width: 720px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.contact-header h2 {
+  margin: 18px 0;
+  color: #f2efff;
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1.15;
+  letter-spacing: -2px;
+}
+
+.contact-description {
+  max-width: 580px;
+  margin: 0 auto;
+  color: #a7a5b7;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* Two-column layout */
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  gap: 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+/* Form card */
+
+.contact-form-card {
+  padding: clamp(22px, 4vw, 36px);
+  border: 1px solid rgba(180, 163, 255, 0.15);
+  border-radius: 20px;
+  background: linear-gradient(
+    145deg,
+    rgba(28, 26, 43, 0.9),
+    rgba(17, 17, 27, 0.96)
+  );
+  box-shadow: 0 20px 65px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form-card h3,
+.contact-info-heading h3 {
+  margin: 0;
+  color: #f0edfa;
+  font-size: 23px;
+  letter-spacing: -0.5px;
+}
+
+.contact-card-description {
+  margin: 10px 0 28px;
+  color: #9996ae;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* Form fields */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 0;
+}
+
+.form-group label {
+  color: #d9d5e8;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 14px 15px;
+  border: 1px solid #343143;
+  border-radius: 10px;
+  outline: none;
+  background: rgba(9, 9, 17, 0.7);
+  color: #f2efff;
+  font: inherit;
+  font-size: 13px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #716e84;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #a78bfa;
+  box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.1);
+}
+
+.form-group textarea {
+  min-height: 140px;
+  resize: vertical;
+  line-height: 1.7;
+}
+
+.contact-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(110deg, #c4b5fd, #67e8f9);
+  color: #0c0a16;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.contact-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
+}
+
+.form-note {
+  margin: -8px 0 0;
+  color: #817d94;
+  font-size: 11px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Direct contact links */
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-info-heading {
+  margin-bottom: 12px;
+}
+
+.contact-mini-label {
+  display: block;
+  margin-bottom: 12px;
+  color: #a78bfa;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+.contact-info-heading h3 {
+  font-size: 25px;
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 17px;
+  border: 1px solid rgba(180, 163, 255, 0.14);
+  border-radius: 14px;
+  background: rgba(23, 22, 36, 0.7);
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.contact-method:hover {
+  transform: translateY(-3px);
+  border-color: rgba(180, 163, 255, 0.4);
+  background: rgba(34, 30, 52, 0.9);
+}
+
+.contact-method-icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+  background: rgba(167, 139, 250, 0.12);
+  color: #c4b5fd;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.linkedin-icon {
+  font-family: Arial, sans-serif;
+}
+
+.email-icon {
+  font-size: 22px;
+}
+
+.whatsapp-icon {
+  background: rgba(110, 231, 183, 0.1);
+  color: #6ee7b7;
+}
+
+.contact-method-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.contact-method-text strong {
+  color: #f0edfa;
+  font-size: 13px;
+}
+
+.contact-method-text span {
+  color: #9996ae;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.contact-method-arrow {
+  color: #c4b5fd;
+  font-size: 18px;
+}
+
+.contact-availability {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+  padding: 14px 2px;
+  color: #a7a5b7;
+  font-size: 11px;
+}
+
+.contact-availability .status-dot {
+  flex-shrink: 0;
+}
+
+/* Footer */
+
+.contact-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 15px;
+  max-width: 1100px;
+  margin: 75px auto 0;
+  padding: 24px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  color: #77748b;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive */
+
+@media (max-width: 850px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-details {
+    margin-top: 12px;
+  }
+
+  .contact-header {
+    margin-bottom: 38px;
+  }
+}
+
+@media (max-width: 520px) {
+  .contact-section {
+    padding: 70px 20px 25px;
+  }
+
+  .contact-header h2 {
+    letter-spacing: -1px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form-card {
+    padding: 22px 17px;
+  }
+
+  .contact-footer {
+    flex-direction: column;
+    margin-top: 50px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-method,
+  .contact-submit,
+  .form-group input,
+  .form-group textarea {
+    transition: none;
+  }
+}
+
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1.3rem;
+  border-radius: 0.6rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: #b8ff65;
+  color: #101010;
+}
+
+
+/* Floating cards: desktop layout */
+.hero-visual {
+  position: relative;
+  isolation: isolate;
+}
+
+.portrait-card {
+  z-index: 2;
+}
+
+.floating-card {
+  z-index: 3;
+}
+
+/* Existing cards */
+.floating-top {
+  top: 13%;
+  left: -2%;
+  animation-delay: -1s;
+}
+
+.floating-bottom {
+  right: 5%;
+  bottom: 18%;
+  animation-delay: -2s;
+}
+
+/* Angular: upper-left */
+.floating-angular {
+  top: -4%;
+  left: 8%;
+  animation-delay: -1.5s;
+}
+
+/* .NET: upper-right */
+.floating-dotnet {
+  top: 2%;
+  right: -3%;
+  animation-delay: -2.5s;
+}
+
+/* SQL Server: lower-left */
+.floating-sql {
+  bottom: 5%;
+  left: -7%;
+  animation-delay: -3s;
+}
+
+/* Deployment: lower-right */
+.floating-deploy {
+  right: -7%;
+  bottom: 3%;
+  animation-delay: -1.8s;
+}
+
+/* Prevent the cards from extending beyond the hero */
+@media (max-width: 1100px) {
+  .floating-angular {
+    left: -3%;
+  }
+
+  .floating-dotnet {
+    right: -3%;
+  }
+
+  .floating-sql {
+    left: -3%;
+  }
+
+  .floating-deploy {
+    right: -3%;
+  }
+}
+
+/* Mobile: reduce visual clutter */
+@media (max-width: 760px) {
+  .hero-visual {
+    padding: 45px 10px;
+  }
+
+  .floating-card {
+    padding: 9px;
+    gap: 7px;
+  }
+
+  .floating-card strong {
+    font-size: 10px;
+  }
+
+  .floating-card div span {
+    font-size: 9px;
+  }
+
+  .floating-angular {
+    top: 0;
+    left: 0;
+  }
+
+  .floating-dotnet {
+    top: 0;
+    right: 0;
+  }
+
+  .floating-top {
+    top: 20%;
+    left: -2px;
+  }
+
+  .floating-bottom {
+    right: -2px;
+    bottom: 20%;
+  }
+
+  .floating-sql {
+    bottom: 0;
+    left: 0;
+  }
+
+  .floating-deploy {
+    right: 0;
+    bottom: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-card {
+    animation: none;
+  }
+}
+
 .portrait-placeholder {
   display: flex;
   flex-direction: column;
