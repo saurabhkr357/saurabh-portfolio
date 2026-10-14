@@ -18,22 +18,35 @@ export class Projects {
       description:
         'A full-stack employee management application with authentication and modules for attendance, payroll and employee information.',
       technologies: ['Angular', 'ASP.NET Core 8', 'EF Core', 'SQL Server'],
-      github: 'https://github.com/saurabhkumar-d2k/EmployeeManagementSystem',
+      github: 'https://github.com/saurabhkr357/EmployeeManagementSystem',
       demo: '',
       accent: 'violet',
       detailsUrl: '/projects/employee-management',
     },
     {
       number: '02',
-      category: 'ENTERPRISE EXPERIENCE',
-      title: 'Enterprise Web Applications',
+      category: 'PERSONAL PROJECT',
+      title: 'PathFinding-Visualizer',
       description:
-        'Professional experience building and maintaining business applications, REST APIs, database workflows and user-facing modules.',
-      technologies: ['AngularJS', '.NET', 'SQL Server', 'REST API'],
-      github: '',
-      demo: '',
+        'A visualizer for demonstrating various pathfinding algorithms like A* and Dijkstra in an interactive environment.',
+      technologies: ['Angular', 'TypeScript'],
+      github: 'https://github.com/saurabhkr357/PathFinding-Visualizer',
+      demo: 'https://path-finding-visualizer-iota.vercel.app/',
       accent: 'cyan',
       detailsUrl: '',
+    },
+    {
+      number: '03',
+      category: 'PERSONAL PROJECT',
+      title: 'pdf-chatbot',
+      description:
+        'A chatbot for interacting with PDF documents, providing seamless integration and user-friendly interface.',
+      technologies: ['Python', 'HTML', 'AI', 'RAG'],
+      github: 'https://github.com/saurabhkr357/pdf-chatbot',
+      demo: 'https://pdf-chatbot-l5io.onrender.com/',
+      accent: 'violet',
+      detailsUrl: '',
     }
+
   ];
 }

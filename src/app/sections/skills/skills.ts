@@ -18,17 +18,22 @@ export class Skills {
     {
       title: 'Backend',
       number: '02',
-      skills: ['C#', 'ASP.NET Core', 'Web API', 'Entity Framework Core']
+      skills: ['C#', 'ASP.NET Core', 'Web API', 'Entity Framework Core', 'LINQ']
     },
     {
       title: 'Database',
       number: '03',
-      skills: ['SQL Server', 'T-SQL', 'Stored Procedures', 'Query Optimization']
+      skills: ['SQL Server','SSMS', 'Stored Procedures', 'Query Optimization']
     },
     {
       title: 'Tools & Cloud',
       number: '04',
-      skills: ['Git', 'GitHub', 'Azure', 'Linux', 'Nginx']
+      skills: ['Git', 'GitHub','Bitbucket', 'Azure', 'Linux', 'Nginx', 'Docker', 'Postman', 'Visual Studio', 'VS Code', 'Swagger']
+    },
+    {
+      title: 'Architecture & Design',
+      number: '05',
+      skills: ['Microservices', 'Monolithic Architecture', 'MVC Pattern']
     }
   ];
 }

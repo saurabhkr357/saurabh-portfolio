@@ -1,4 +1,3 @@
-
 <main class="detail-page">
   <a class="back-link" routerLink="/" fragment="projects">
     ← Back to projects
@@ -9,19 +8,68 @@
     <h1>{{ project.title }}</h1>
     <p class="subtitle">{{ project.subtitle }}</p>
 
-    <a
-      class="button"
-      [href]="project.github"
-      target="_blank"
-      rel="noopener noreferrer">
-      View source code ↗
-    </a>
+    <div class="header-actions">
+      <a
+        class="button"
+        [href]="project.github"
+        target="_blank"
+        rel="noopener noreferrer">
+        View source code ↗
+      </a>
+      <span class="project-status">Full-stack application</span>
+    </div>
+
+    <div class="project-meta">
+      <div>
+        <span>FRONTEND</span>
+        <strong>{{ project.frontend }}</strong>
+      </div>
+      <div>
+        <span>BACKEND</span>
+        <strong>ASP.NET Core 8</strong>
+      </div>
+      <div>
+        <span>DATABASE</span>
+        <strong>SQL Server</strong>
+      </div>
+    </div>
   </header>
 
   <section class="detail-section">
     <p class="eyebrow">OVERVIEW</p>
     <h2>What I wanted to build</h2>
     <p>{{ project.overview }}</p>
+  </section>
+
+  <section class="detail-section">
+    <p class="eyebrow">ARCHITECTURE</p>
+    <h2>How the application works</h2>
+    <p class="section-intro">
+      The application separates the user interface, API, persistence
+      and security responsibilities into distinct layers.
+    </p>
+
+    <div class="architecture-grid">
+      @for (layer of project.architecture; track layer.title) {
+        <article class="architecture-card">
+          <span class="card-index">
+            {{ (project.architecture.indexOf(layer) + 1).toString().padStart(2, '0') }}
+          </span>
+          <h3>{{ layer.title }}</h3>
+          <p>{{ layer.description }}</p>
+        </article>
+      }
+    </div>
+
+    <div class="architecture-flow">
+      <span>Angular UI</span>
+      <span class="flow-arrow">→</span>
+      <span>REST API</span>
+      <span class="flow-arrow">→</span>
+      <span>Service Layer</span>
+      <span class="flow-arrow">→</span>
+      <span>SQL Server</span>
+    </div>
   </section>
 
   <section class="detail-section">
@@ -32,33 +80,95 @@
       <article>
         <span>FRONTEND</span>
         <h3>{{ project.frontend }}</h3>
+        <p>Components, routing, services and API integration.</p>
       </article>
 
       <article>
         <span>BACKEND</span>
         <h3>{{ project.backend }}</h3>
+        <p>REST endpoints, business logic and dependency injection.</p>
       </article>
 
       <article>
         <span>DATABASE</span>
         <h3>{{ project.database }}</h3>
+        <p>Relational data storage and Entity Framework Core.</p>
       </article>
+    </div>
+
+    <div class="technology-list">
+      @for (technology of project.techStack; track technology) {
+        <span>{{ technology }}</span>
+      }
     </div>
   </section>
 
   <section class="detail-section">
-    <p class="eyebrow">KEY FEATURES</p>
+    <p class="eyebrow">APPLICATION MODULES</p>
     <h2>What it includes</h2>
+
+    <div class="module-grid">
+      @for (module of project.modules; track module.title) {
+        <article class="module-card">
+          <h3>{{ module.title }}</h3>
+          <p>{{ module.description }}</p>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="detail-section">
+    <p class="eyebrow">IMPLEMENTATION</p>
+    <h2>Engineering highlights</h2>
 
     <ul class="feature-list">
       @for (feature of project.features; track feature) {
         <li>{{ feature }}</li>
       }
     </ul>
+
+    <div class="highlights-grid">
+      @for (highlight of project.engineeringHighlights; track highlight) {
+        <article>
+          <span class="highlight-mark">↗</span>
+          <p>{{ highlight }}</p>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="detail-section">
+    <p class="eyebrow">PERFORMANCE & SCALABILITY</p>
+    <h2>Designed with growth in mind</h2>
+    <p class="section-intro">
+      Beyond core CRUD functionality, the project provides a place to
+      demonstrate database performance and scalability techniques.
+    </p>
+
+    <div class="performance-grid">
+      @for (item of project.performance; track item.title) {
+        <article class="performance-card">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </article>
+      }
+    </div>
+
+    <p class="implementation-note">
+      Sharding is presented as a scalability implementation/demo.
+      Performance improvements should be quantified only after benchmarking
+      against a defined workload.
+    </p>
   </section>
 
   <section class="detail-cta">
-    <h2>Want to explore the implementation?</h2>
+    <p class="eyebrow">EXPLORE THE CODE</p>
+    <h2>Interested in the implementation?</h2>
+    <p>
+      Explore the repository for the Angular frontend, ASP.NET Core API
+      and database integration.
+    </p>
+
     <a
       class="button"
       [href]="project.github"
